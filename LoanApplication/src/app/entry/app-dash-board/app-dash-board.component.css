@@ -1,0 +1,14 @@
+.row{
+    display: flex;
+
+}
+.col-1{
+    background-color: #13d1cd ;
+    width: 300px;
+    height: 550px;
+}
+.col-2{
+    width: 74.5%;
+    height: 550px;
+}
+

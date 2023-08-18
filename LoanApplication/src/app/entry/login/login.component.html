@@ -1,0 +1,30 @@
+<!--
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+     <div>
+    <input type="text" formControlName="username" placeholder="Enter Username">
+    <input type="text" formControlName="password" placeholder="Enter Password">
+    
+    <button type="submit">LOGIN</button>
+</div>
+
+</form>
+-->
+<div id="login-form-wrap">
+    <h2>Login</h2>
+    <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <p>
+        <input type="text" formControlName="username" placeholder="Enter Username">
+        <i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="text" formControlName="password" placeholder="Enter Password"><i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="submit" id="login" value="Login">
+      </p>
+    </form>
+    <div id="create-account-wrap">
+      <p>Not a member? <a href="#">Create Account</a><p>
+    </div><!--create-account-wrap-->
+  </div><!--login-form-wrap-->
+  
