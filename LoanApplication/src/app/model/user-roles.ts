@@ -13,13 +13,25 @@ public static userRoles:Array<any>=[
             oe:[
                 {label:'view Enquiry' ,path:'checkCibil'},
                 {label:'Verify Application' ,path:'verifyApp'},
+            ],
+            admin:
+            [
               
+                {label:'Add Operational Executive' ,path:'addoe'},
+                {label:'Add Relational Executive' ,path:'addre'},
+                {label:'Add Credit Manager' ,path:'addcm'},
+                {label:'Add Bank Accountant' ,path:'addbankacc'},
+                {label:'View Enquiry' ,path:'viewenquiry'},
+                {label:'Send Mail' ,path:'sendmail'},
                 
+<<<<<<< HEAD
+              
+            ]
+=======
               ]
+>>>>>>> f3e33b44131f895b6e742dbb1ea3c87693b8fffc
     }
       
-
-
 ]
 
 }
