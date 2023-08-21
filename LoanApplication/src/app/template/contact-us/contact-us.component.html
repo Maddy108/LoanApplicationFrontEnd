@@ -1,18 +1,19 @@
 <div class="container">
-    <form>
+  <form [formGroup]=" contactForm" (ngSubmit)="addContactUs()">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name..">
-  
+      <input type="text" formControlName="name" id="name" name="name" placeholder="Your Name..">
       <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Your Email..">
+      <input type="text" formControlName="email" id="email" name="email" placeholder="Your Email..">
 
       <label for="mobileno">Mobile Number</label>
-      <input type="text" id="mobileno" name="mobileno" placeholder="Mobile Number..">
+      <input type="text" formControlName="mobileno" id="mobileno" name="mobileno" placeholder="Mobile Number..">
 
       <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-  
+      <textarea  formControlName="subject" id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
       <input type="submit" value="Submit">
     </form>
   </div>
+  
+
   
