@@ -23,6 +23,7 @@ public static userRoles:Array<any>=[
                 {label:'Add Bank Accountant' ,path:'addbankacc'},
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
+
             ]
     }
       
