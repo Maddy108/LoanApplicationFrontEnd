@@ -14,20 +14,21 @@ export class EnquiryComponent {
   
   ngOnInit(): void {
     this.enquiryForm=this.fb.group({
-    
+      firstName : [],
+      lastName : [],
+      age : [],
+      email : [],
+      mobileNumber : [],
+      pancardNumber : []
     })
   }
 
   public addEnquiryInfo()
-  {this.loanService.addEnquiry(this.fb).subscribe(
-    (enquiry: any) => {
-      if (enquiry.eId > 0) {
-        alert("user created...")
+  {this.loanService.addEnquiry(this.enquiryForm.value).subscribe(
+    (data: any) => {
         this.enquiryForm.reset();
       }
-    }
   );
 }
-
   }
 
