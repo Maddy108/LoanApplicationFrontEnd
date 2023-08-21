@@ -15,7 +15,7 @@ public static userRoles:Array<any>=[
                 {label:'Verify Application' ,path:'verifyApp'},
               
                 
-              ] 
+              ]
     }
       
 

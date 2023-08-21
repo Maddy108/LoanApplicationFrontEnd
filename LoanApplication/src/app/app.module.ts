@@ -13,6 +13,7 @@ import { AppDashBoardComponent } from './entry/app-dash-board/app-dash-board.com
 import { AppHeaderComponent } from './template/app-header/app-header.component';
 import { AppSideMenuComponent } from './template/app-side-menu/app-side-menu.component';
 import { EnquiryComponent } from './template/enquiry/enquiry.component';
+import { AppFooterComponent } from './template/app-footer/app-footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { EnquiryComponent } from './template/enquiry/enquiry.component';
     AppDashBoardComponent,
     AppHeaderComponent,
     AppSideMenuComponent,
-    EnquiryComponent
+    EnquiryComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
