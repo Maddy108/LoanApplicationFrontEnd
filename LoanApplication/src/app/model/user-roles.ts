@@ -17,10 +17,7 @@ public static userRoles:Array<any>=[
             admin:
             [
               
-                {label:'Add Operational Executive' ,path:'addoe'},
-                {label:'Add Relational Executive' ,path:'addre'},
-                {label:'Add Credit Manager' ,path:'addcm'},
-                {label:'Add Bank Accountant' ,path:'addbankacc'},
+                {label:'Add User' ,path:'adduser'},
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
 
