@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddOeComponent } from './add-oe.component';
+import { AddUserComponent } from './add-user.component';
 
-describe('AddOeComponent', () => {
-  let component: AddOeComponent;
-  let fixture: ComponentFixture<AddOeComponent>;
+describe('AddUserComponent', () => {
+  let component: AddUserComponent;
+  let fixture: ComponentFixture<AddUserComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddOeComponent]
+      declarations: [AddUserComponent]
     });
-    fixture = TestBed.createComponent(AddOeComponent);
+    fixture = TestBed.createComponent(AddUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
