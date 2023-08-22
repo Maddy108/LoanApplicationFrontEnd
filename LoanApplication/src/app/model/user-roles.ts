@@ -11,7 +11,7 @@ public static userRoles:Array<any>=[
               
             ],
             oe:[
-                {label:'view Enquiry' ,path:'checkCibil'},
+                {label:'view Enquiry' ,path:'viewEnq'},
                 {label:'Verify Application' ,path:'verifyApp'},
             ],
             admin:
@@ -23,13 +23,8 @@ public static userRoles:Array<any>=[
                 {label:'Add Bank Accountant' ,path:'addbankacc'},
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
-                
 
-              
             ]
-
-              
-
     }
       
 ]

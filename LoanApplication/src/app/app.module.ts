@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppFooterComponent } from './template/app-footer/app-footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { AppFooterComponent } from './template/app-footer/app-footer.component';
     AppHeaderComponent,
     AppSideMenuComponent,
     EnquiryComponent,
-    AppFooterComponent
+    AppFooterComponent,
+   
   ],
   imports: [
     BrowserModule,

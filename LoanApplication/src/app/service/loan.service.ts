@@ -22,4 +22,15 @@ export class LoanService {
   {
     return this.http.get("http://localhost:8080/loanapp/getusers/"+userName+"/"+userPassword);
   }
+
+  public addContactUs(contactinfo:any)
+  {
+
+    return this.http.post("http://localhost:8080/loanapp/addContactInfo",contactinfo);
+  }
+
+  public viewEnquiry()
+  {
+    return  this.http.get("http://localhost:8080/loanapp/getEnquiry")
+  }
 }
