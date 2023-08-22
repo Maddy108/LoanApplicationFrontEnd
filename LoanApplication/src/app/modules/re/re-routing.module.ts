@@ -7,7 +7,7 @@ import { LoanAppComponent } from './loan-app/loan-app.component';
 
 const routes: Routes = [
   {
-    path: "viewEnq", component:ViewEnquiryComponent
+    path:"viewEnqq",component:ViewEnquiryComponent
   },
   {
     path:"addEnq", component:AddEnquiryComponent

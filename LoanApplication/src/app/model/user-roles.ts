@@ -4,7 +4,7 @@ public static userRoles:Array<any>=[
   //on 0th index 
     {
         re:[
-              {label:'View Enquiry' ,path:'viewEnq'},
+              {label:'View Enquiry' ,path:'viewEnqq'},
               {label:'Add Enquiry' ,path:'addEnq'},
               {label:'Send Mail' ,path:'sendMail'},
               {label:'Fill Loan Form' ,path:'loanApp'}
