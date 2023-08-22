@@ -11,7 +11,7 @@ public static userRoles:Array<any>=[
               
             ],
             oe:[
-                {label:'view Enquiry' ,path:'checkCibil'},
+                {label:'view Enquiry' ,path:'viewEnq'},
                 {label:'Verify Application' ,path:'verifyApp'},
             ],
             admin:

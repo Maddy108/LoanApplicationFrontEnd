@@ -28,4 +28,9 @@ export class LoanService {
 
     return this.http.post("http://localhost:8080/loanapp/addContactInfo",contactinfo);
   }
+
+  public viewEnquiry()
+  {
+    return  this.http.get("http://localhost:8080/loanapp/getEnquiry")
+  }
 }

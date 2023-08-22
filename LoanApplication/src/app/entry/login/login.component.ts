@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit{
     })
   }
 
-
-
-  onLogin()
+ onLogin()
   {
 
      let username:string=this.loginForm.controls['username'].value;
