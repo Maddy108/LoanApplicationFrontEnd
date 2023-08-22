@@ -1,19 +1,36 @@
 .card1{
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 7%;
+    margin-left: 33px;
     width: 70%;
 }
 .card2{
-    margin-top: 30px;
-    margin-left: 27%;
+    margin-top: -38%;
+    margin-left: 40%;
     width: 70%;
 }
 
 .card3{
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: -38%;
+    margin-left: 76%;
     width: 70%;
 }
 .topmarg{
+    margin-top: 0;
+}
+.aboutus{
     margin-top: -50%;
+    color: rgb(244, 242, 242);
+}
+
+.aboutparagraph{
+width: 50%;
+margin-left: 25%;
+}
+
+
+.aboutus :hover{
+    color: rgb(96, 92, 92);
+}
+h1{
+    margin-top: 10%;
 }
