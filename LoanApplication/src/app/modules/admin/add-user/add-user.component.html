@@ -1,1 +1,36 @@
-<p>add-user works!</p>
+<div class = "container d-flex justify-content-center">
+    <form [formGroup]="addUserForm" (ngSubmit)="addUser()">
+       <h2>User Form</h2>
+       <div class = "form-row">
+          <div class = "form-group col-md-6">
+             <label for = "name">Name</label>
+             <input type = "text" class =" form-control"
+                id = "inputEmail4" formControlName="name" placeholder = "Enter Name">
+          </div>
+          
+          <div class = "form-group col-md-6">
+             <label for = "email">Email</label>
+             <input type = "text" class = "form-control" 
+                id = "email" formControlName="userEmail" placeholder = "Enter Email">
+          </div>
+
+          <div class = "form-group col-md-6">
+            <label for = "profile">Profile Photo</label>
+            <input type="file" class="form-control" (change)="onSelectProfilePhoto($event)" id="profile" placeholder="Choose Photo"/>
+           <!-- <img [src]="profileImg" [hidden]="!profileImg" alt=""> -->
+         </div>
+       </div>
+
+       <div class = "form-group col-md-6">
+        <label for = "inputPassword4">Users</label>
+       <select class="form-select" aria-label="Default select example" formControlName="userType">
+        <option selected>Select User</option>
+        <option value="oe">Operational Executive</option>
+        <option value="re">Relational Executive</option>
+        <option value="cm">Credit Manager</option>
+      </select>
+      </div>
+
+       <button type = "submit" class = "btn btn-primary">Add User</button>
+    </form>
+ </div>

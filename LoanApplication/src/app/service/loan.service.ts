@@ -28,4 +28,8 @@ export class LoanService {
   {
     return  this.http.get("http://localhost:8080/loanapp/getEnquiry")
   }
+
+  public addUser(f:FormData){
+    return this.http.post("http://localhost:8080/loanapp/addUser",f);
+  }
 }

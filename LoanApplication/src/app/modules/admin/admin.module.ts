@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
 import { SendMailComponent } from './send-mail/send-mail.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AddUserComponent } from './add-user/add-user.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
