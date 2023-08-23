@@ -32,4 +32,12 @@ export class LoanService {
   public addUser(f:FormData){
     return this.http.post("http://localhost:8080/loanapp/addUser",f);
   }
+  public getEnquiryStatusCheck(status1,status2){
+    return this.http.get("http://localhost:8080/loanapp/getEnquiryByStatus/"+status1+"/"+status2)
+  }
+  public updateEnquiry(enquiry:any)
+   {
+    return this.http.put("http://localhost:8080/loanapp/updateEnquiryStatus/"+enquiry,{});
+  }
+
 }

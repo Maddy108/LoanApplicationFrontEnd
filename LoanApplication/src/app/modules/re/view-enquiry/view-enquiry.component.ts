@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoanService } from 'src/app/service/loan.service';
 
@@ -10,23 +10,27 @@ import { LoanService } from 'src/app/service/loan.service';
 })
 export class ViewEnquiryComponent {
   constructor(private fb:FormBuilder,private router:Router, private loanService:LoanService){}
-  users: any[];
-  
+  viewenquiryForm: FormGroup;
+  enquiryStatus:String="CREATED"
+  enquirystatus2:String="no"
+ //enquiryuser:any[];
+
+  enquiry: any[];
   ngOnInit(): void {
-   this.viewEnquiryDetail();
+   this.getEnquiryData();
       }
-   private viewEnquiryDetail()
-   {
-    this.loanService.viewEnquiry().subscribe(
-      (data: any) => {
-        console.log('Received data:', data);
-        if (data && data.responseData) {
-          this.users = data.responseData; 
-        }
-      },
-      error => {
-        console.error(error);
-      }
-    );
+   
+
+  getEnquiryData()
+  {
+      this.loanService.getEnquiryStatusCheck(this.enquiryStatus,this.enquirystatus2).subscribe((data:any)=>{
+        this.enquiry=data;
+      });
+  }
+  editEnquiryStatus(enquiry:any)
+  {
+    this.loanService.updateEnquiry(enquiry.eid).subscribe();
+    window.location.reload();
   }
 }
+
