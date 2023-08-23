@@ -8,17 +8,21 @@
         <th scope="col">Email</th>
         <th scope="col">MobileNumber</th>
         <th scope="col">PanNumber</th>
+        <th scope="col">EnquiryStatus</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let u of users">
-        <td>{{u.eid}}</td>
+      <tr *ngFor="let u of enquiry">
+        <td>{{u.eId}}</td>
         <td>{{u.firstName}}</td>
         <td>{{u.lastName}}</td>
         <td>{{u.age}}</td>
         <td>{{u.email}}</td>
         <td>{{u.mobileNumber}}</td>
         <td>{{u.pancardNumber}}</td>
+        <td>{{u.enquiryStatus}}</td>
+   
+        <button type = "submit" class = "btn btn-primary"(click)="editEnquiryStatus(u)">Verify</button>
       </tr>
     </tbody>
   </table>
