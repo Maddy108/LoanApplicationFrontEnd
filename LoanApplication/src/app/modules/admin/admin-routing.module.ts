@@ -6,19 +6,13 @@ import { ViewEnquiryComponent } from '../re/view-enquiry/view-enquiry.component'
 import { SendMailComponent } from '../re/send-mail/send-mail.component';
 import { AddEnquiryComponent } from '../re/add-enquiry/add-enquiry.component';
 import { LoanAppComponent } from '../re/loan-app/loan-app.component';
-import { AddOeComponent } from './add-oe/add-oe.component';
-import { AddReComponent } from './add-re/add-re.component';
-import { AddCmComponent } from './add-cm/add-cm.component';
-import { AddBankAccountantComponent } from './add-bank-accountant/add-bank-accountant.component';
+import { AddUserComponent } from './add-user/add-user.component';
+
 
 const routes: Routes = [
- 
-  {path:'addoe', component:AddOeComponent},
-  {path:'addre' , component:AddReComponent},
-  {path: "addcm", component:AddCmComponent},
-  {path:"addbankacc", component:AddBankAccountantComponent},
   {path:"viewenquiry", component:ViewEnquiryComponent},
   {path:"sendmail", component:SendMailComponent},
+  {path:"adduser", component:AddUserComponent},
 ];
 
 @NgModule({

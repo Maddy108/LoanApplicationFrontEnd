@@ -19,32 +19,34 @@ export class LoginComponent implements OnInit{
     })
   }
 
-
-
-  onLogin()
+ onLogin()
   {
 
      let username:string=this.loginForm.controls['username'].value;
      let password:string=this.loginForm.controls['password'].value;
 
-     if(username=='RE' && password=='RE@123')
-     {
-              localStorage.setItem("userType","re");
-          this.router.navigateByUrl('/dash/re')         
-     }
-      else if(username=='OE' && password=='OE@123')
-     {
-              localStorage.setItem("userType","oe");
-          this.router.navigateByUrl('/dash/oe')         
-     }
-     else if(username=="admin" && password=="admin@123")
-     {
-              localStorage.setItem("userType","admin");
-          this.router.navigateByUrl('/dash/admin');        
-     }
-     else{
-      alert("Enter vlid login credentials..!")
-     }
-    
+     this.loanService.getuser(username,password).subscribe((data:any)=>{
+       
+       if(data.responseData.userType=='re')
+       {
+                localStorage.setItem("userType","re");
+            this.router.navigateByUrl('/dash/re')         
+       }
+        else if(data.responseData.userType=='oe')
+       {
+                localStorage.setItem("userType","oe");
+            this.router.navigateByUrl('/dash/oe')         
+       }
+       else if(data.responseData.userType=='admin')
+       {
+                localStorage.setItem("userType","admin");
+            this.router.navigateByUrl('/dash/admin');        
+       }
+       else{
+        alert("Enter vlid login credentials..!")
+       }
+       
+    })
+
   }
 }

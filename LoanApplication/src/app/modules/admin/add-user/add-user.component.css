@@ -1,0 +1,19 @@
+.container{
+    margin-top: 10%;
+    margin-left: 27%;
+    width: 50%;
+    height: 80%;
+    border: 1px solid;
+}
+
+input{
+    width: 300px;
+}
+
+button{
+    margin-top: 10px;
+}
+
+.form-group{
+    padding-bottom: 20px;
+}

@@ -1,1 +1,25 @@
-<p>enquiry works!</p>
+<div class="container">
+  <form [formGroup]=" enquiryForm" (ngSubmit)="addEnquiryInfo()">
+      <label for="firstName">First Name</label>
+      <input type="text" formControlName="firstName" id="firstName" name="firstName" placeholder=" First Name..">
+  
+      <label for="lastName">Last Name</label>
+      <input type="text" formControlName="lastName" id="lastName" name="lastName" placeholder=" Last Name..">
+
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" id="email" name="email" placeholder="Email..">
+
+      <label for="age">Age</label>
+      <input type="text" formControlName="age" id="age" name="age" placeholder="Age..">
+
+      <label for="mobileNumber">Mobile Number</label>
+      <input type="text" formControlName="mobileNumber" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number..">
+      
+      <label for="pancardNumber">Pan Card Number</label>
+      <input type="text" formControlName="pancardNumber" id="pancardNumber" name="pancardNumber" placeholder="pan card number..">
+
+  
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  

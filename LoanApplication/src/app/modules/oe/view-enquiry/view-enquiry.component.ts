@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoanService } from 'src/app/service/loan.service';
 
@@ -10,7 +10,7 @@ import { LoanService } from 'src/app/service/loan.service';
 })
 export class ViewEnquiryComponent {
   constructor(private fb:FormBuilder,private router:Router, private loanService:LoanService){}
-  users: any[];
+  viewEnquiry: any[];
   
   ngOnInit(): void {
    this.viewEnquiryDetail();
@@ -21,7 +21,7 @@ export class ViewEnquiryComponent {
       (data: any) => {
         console.log('Received data:', data);
         if (data && data.responseData) {
-          this.users = data.responseData; 
+          this.viewEnquiry = data.responseData; 
         }
       },
       error => {
@@ -29,4 +29,7 @@ export class ViewEnquiryComponent {
       }
     );
   }
-}
+   }
+  
+
+

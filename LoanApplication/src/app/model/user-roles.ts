@@ -4,32 +4,24 @@ public static userRoles:Array<any>=[
   //on 0th index 
     {
         re:[
-              {label:'View Enquiry' ,path:'viewEnq'},
+              {label:'View Enquiry' ,path:'viewEnqq'},
               {label:'Add Enquiry' ,path:'addEnq'},
               {label:'Send Mail' ,path:'sendMail'},
               {label:'Fill Loan Form' ,path:'loanApp'}
               
             ],
             oe:[
-                {label:'view Enquiry' ,path:'checkCibil'},
+                {label:'view Enquiry' ,path:'viewEnq'},
                 {label:'Verify Application' ,path:'verifyApp'},
             ],
             admin:
             [
               
-                {label:'Add Operational Executive' ,path:'addoe'},
-                {label:'Add Relational Executive' ,path:'addre'},
-                {label:'Add Credit Manager' ,path:'addcm'},
-                {label:'Add Bank Accountant' ,path:'addbankacc'},
+                {label:'Add User' ,path:'adduser'},
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
-                
-<<<<<<< HEAD
-              
+
             ]
-=======
-              ]
->>>>>>> f3e33b44131f895b6e742dbb1ea3c87693b8fffc
     }
       
 ]
