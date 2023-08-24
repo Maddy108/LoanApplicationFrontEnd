@@ -40,4 +40,8 @@ export class LoanService {
     return this.http.put("http://localhost:8080/loanapp/updateEnquiryStatus/"+enquiry,{});
   }
 
+  public checkCibil(pancardNumber:any){
+    return this.http.get("http://localhost:8080/loanapp/checkCibil/"+pancardNumber);
+  }
+
 }

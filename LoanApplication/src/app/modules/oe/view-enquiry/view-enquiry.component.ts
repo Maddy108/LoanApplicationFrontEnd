@@ -32,7 +32,11 @@ export class ViewEnquiryComponent {
     this.loanService.updateEnquiry(enquiry.eid).subscribe();
     window.location.reload();
   }
-   }
+
+  checkCibil(pancardNumber:any){
+    this.loanService.checkCibil(pancardNumber).subscribe();
+  }
+}
   
 
 
