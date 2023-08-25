@@ -20,6 +20,7 @@ public static userRoles:Array<any>=[
                 {label:'Add User' ,path:'adduser'},
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
+                {label:'View User',path:'viewUser'}
 
             ],
             cm:
