@@ -1,1 +1,17 @@
-<p>send-mail works!</p>
+<div class="container">
+    <form [formGroup]=" sendMailForm" (ngSubmit)="sendMail()">
+        <label for="mailTo">To :</label>
+        <input type="text" formControlName="mailTo" id="mailTo" name="mailTo" placeholder="Enter Email..">
+  
+        <label for="mailSubject">Subject</label>
+        <textarea  formControlName="mailSubject" id="mailSubject" name="mailSubject" placeholder="Write something.." style="height:200px"></textarea>
+  
+        <label for="mailText">Text :</label>
+        <input type="text" formControlName="mailText" id="mailText" name="mailText" placeholder="Enter text..">
+  
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+  
+    

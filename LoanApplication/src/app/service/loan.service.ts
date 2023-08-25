@@ -44,4 +44,8 @@ export class LoanService {
     return this.http.get("http://localhost:8080/loanapp/checkCibil/"+pancardNumber);
   }
 
+  public sendMail(mailDetails:any)
+  {
+    return this.http.post("http://localhost:8080/loanapp/sendMail",mailDetails);
+  }
 }
