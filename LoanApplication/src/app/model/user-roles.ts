@@ -21,6 +21,11 @@ public static userRoles:Array<any>=[
                 {label:'View Enquiry' ,path:'viewenquiry'},
                 {label:'Send Mail' ,path:'sendmail'},
 
+            ],
+            cm:
+            [
+              {label:'Check Application' ,path:'checkappl'},
+              {label:'Sanction Letter' ,path:'letter'},
             ]
     }
       

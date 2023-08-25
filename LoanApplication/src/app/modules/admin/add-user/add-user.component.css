@@ -1,8 +1,8 @@
 .container{
     margin-top: 10%;
     margin-left: 27%;
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 90%;
     border: 1px solid;
 }
 
@@ -16,4 +16,19 @@ button{
 
 .form-group{
     padding-bottom: 20px;
+}
+
+
+
+
+img {
+    max-width:120px;
+    display: inline-flex;
+    float: right;
+
+}
+
+input[type=file] {
+    padding: 10px;
+    
 }
