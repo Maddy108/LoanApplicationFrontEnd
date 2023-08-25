@@ -48,4 +48,9 @@ export class LoanService {
   {
     return this.http.post("http://localhost:8080/loanapp/sendMail",mailDetails);
   }
+
+  getcibil(e: any) {
+    e.cibil={};
+    return this.http.put("http://localhost:8080/loanapp/getcibil",e);
+  }
 }

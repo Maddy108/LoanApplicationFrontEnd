@@ -10,6 +10,7 @@
       <th scope="col">PanNumber</th>
       <th scope="col">EnquiryStatus</th>
       <th scope="col">Action</th>
+      <th>CIBIL SCORE</th>
     </tr>
   </thead>
   <tbody>
@@ -22,9 +23,13 @@
       <td>{{u.mobileNumber}}</td>
       <td>{{u.pancardNumber}}</td>
       <td>{{u.enquiryStatus}}</td>
-      <td>
-        <button type = "submit" class = "btn btn-primary"(click)="checkCibil(u.pancardNumber)">Check Cibil</button>
-      </td>
+        <td>
+          <button class="btn btn-primary" (click)="getcibil(u)" [hidden]="u.enquiryStatus=='CIBIL_CHECKED'">Check Cibil</button>
+          <button class="btn btn-primary" (click)="sendtocredit(u.eid)" [hidden]="u.enquiryStatus=='CIBIL_REQUIRED'" >Send To Credit</button>
+        </td>
+        <td>
+          <h6 disabled type="number" [hidden]="!u.cibil.cibilScore">{{u.cibil.cibilScore}}</h6>
+        </td>
     </tr>
   </tbody>
 </table>

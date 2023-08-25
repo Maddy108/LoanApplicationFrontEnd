@@ -11,8 +11,13 @@ import { LoanService } from 'src/app/service/loan.service';
 export class ViewEnquiryComponent {
   constructor(private fb:FormBuilder,private router:Router, private loanService:LoanService){}
   viewenquiryForm: FormGroup;
-  enquiryStatus:String="CIBIL_REQUIRED"
-  enquirystatus2:String="no"
+  enquiryStatus:String="CIBIL_REQUIRED";
+  enquirystatus2:String="CIBIL_CHECKED";
+  cibilScore:number;
+
+  
+cstatus:boolean=false
+cibil:number=0;
  //enquiryuser:any[];
 
   enquiry: any[];
@@ -33,9 +38,24 @@ export class ViewEnquiryComponent {
     window.location.reload();
   }
 
-  checkCibil(pancardNumber:any){
-    this.loanService.checkCibil(pancardNumber).subscribe();
-  }
+  getcibil(e:any){
+    
+
+    this.loanService.getcibil(e).subscribe((data:any)=>{
+
+    })
+    window.location.reload();
+    this.getEnquiryData();
+   
+}
+
+// sendtocredit(eid:number)
+// {
+//   this.loanService.verifyenq(eid).subscribe((data:any)=>{
+//     window.location.reload();
+//   });
+// }
+
 }
   
 
