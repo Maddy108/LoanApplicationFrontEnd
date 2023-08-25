@@ -6,6 +6,7 @@ import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
 import { SendMailComponent } from './send-mail/send-mail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
    
     ViewEnquiryComponent,
     SendMailComponent,
-    AddUserComponent
+    AddUserComponent,
+    ViewUserComponent
   ],
   imports: [
     CommonModule,

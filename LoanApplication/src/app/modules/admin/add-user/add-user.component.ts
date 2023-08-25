@@ -8,11 +8,12 @@ import { LoanService } from 'src/app/service/loan.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
+ 
   constructor(private fb:FormBuilder, private loanService:LoanService){}
 
   addUserForm:FormGroup;
   profileImg:any;
+ 
 
   ngOnInit(): void {
     this.addUserForm=this.fb.group({
@@ -30,13 +31,32 @@ export class AddUserComponent implements OnInit {
       this.resetf();
     })
   }
-  onSelectProfilePhoto(event)
+//   onSelectProfilePhoto(event)
+// {
+//   this.profileImg=event.target.files[0];
+// }
+//   resetf(){
+//     this.addUserForm.reset();
+//     this.profileImg=null;
+//   }
+imageSrc: any;
+onSelectProfilePhoto(event)
 {
   this.profileImg=event.target.files[0];
+ 
+  const reader = new FileReader();
+  reader.onload = e => this.imageSrc = reader.result;
+     reader.readAsDataURL(this.profileImg);
+  
 }
   resetf(){
     this.addUserForm.reset();
     this.profileImg=null;
-  }
-
+  } 
 }
+
+
+
+
+
+

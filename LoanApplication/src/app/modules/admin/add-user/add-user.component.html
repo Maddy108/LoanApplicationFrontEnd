@@ -17,7 +17,10 @@
           <div class = "form-group col-md-6">
             <label for = "profile">Profile Photo</label>
             <input type="file" class="form-control" (change)="onSelectProfilePhoto($event)" id="profile" placeholder="Choose Photo"/>
+            <img id="blah" [src]="imageSrc || 'http://placehold.it/100'" alt="your image" />
            <!-- <img [src]="profileImg" [hidden]="!profileImg" alt=""> -->
+      
+
          </div>
        </div>
 

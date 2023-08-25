@@ -43,6 +43,10 @@ export class LoanService {
   public checkCibil(pancardNumber:any){
     return this.http.get("http://localhost:8080/loanapp/checkCibil/"+pancardNumber);
   }
+  public getAllUsers()
+  {
+    return this.http.get("http://localhost:8080/loanapp/getAllUsers")
+  }
 
   public sendMail(mailDetails:any)
   {
