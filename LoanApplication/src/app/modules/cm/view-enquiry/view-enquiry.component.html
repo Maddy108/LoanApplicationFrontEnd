@@ -9,6 +9,7 @@
         <th scope="col">MobileNumber</th>
         <th scope="col">PanNumber</th>
         <th scope="col">EnquiryStatus</th>
+        <th scope="col">Cibil Score</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -22,6 +23,14 @@
         <td>{{u.mobileNumber}}</td>
         <td>{{u.pancardNumber}}</td>
         <td>{{u.enquiryStatus}}</td>
+        <td>
+          <h6 disabled type="number">{{u.cibil.cibilScore}}</h6>
+        </td>
+   
+        <td style="display: flex">
+          <button class="btn btn-primary" (click)="getcibil(u)">Approve</button>
+        </td>
+       
       </tr>
     </tbody>
   </table>

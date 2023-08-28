@@ -11,8 +11,8 @@ import { LoanService } from 'src/app/service/loan.service';
 export class ViewEnquiryComponent {
   constructor(private fb:FormBuilder,private router:Router, private loanService:LoanService){}
   viewenquiryForm: FormGroup;
-  enquiryStatus:String="CIBIL_REQUIRED";
-  enquirystatus2:String="CIBIL_CHECKED";
+  enquiryStatus:String="CIBIL_CHECKED";
+  enquirystatus2:String="APPROVED";
   cibilScore:number;
 
   
