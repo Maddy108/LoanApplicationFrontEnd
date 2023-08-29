@@ -1,0 +1,50 @@
+<div class = "container d-flex justify-content-center">
+   <form [formGroup]="customerForm" (ngSubmit)="addCustomerForm()">
+      <h2>User Form</h2>
+      <div class = "form-row">
+         <div class = "form-group col-md-6">
+            <label for = "customerName">Customer Name</label>
+            <input type = "text" class =" form-control"
+               id = "customerName" formControlName="customerName" placeholder = "Enter Name">
+         </div>
+
+         <div class = "form-group col-md-6">
+            <label for = "customerDateOfBirth">Date Of Birth</label>
+            <input type = "text" class =" form-control"
+               id = "customerDateOfBirth" formControlName="customerDateOfBirth" placeholder = "Date Of Birth">
+         </div>
+
+         <div class = "form-group col-md-6">
+            <label for = "customerAge">Age</label>
+            <input type = "text" class =" form-control"
+               id = "customerAge" formControlName="customerAge" placeholder = "Enter Age">
+         </div>
+
+         <div class = "form-group col-md-6">
+            <label for = "customerGender">Gender</label>
+            <input type = "text" class =" form-control"
+               id = "customerGender" formControlName="customerGender" placeholder = "Enter Gender">
+         </div>
+         
+         <div class = "form-group col-md-6">
+            <label for = "customerEmail">Email</label>
+            <input type = "text" class =" form-control"
+               id = "customerEmail" formControlName="customerEmail" placeholder = "Enter Email">
+         </div>
+
+         <div class = "form-group col-md-6">
+            <label for = "customerMobileNumber">Mobile Number</label>
+            <input type = "text" class =" form-control"
+               id = "customerMobileNumber" formControlName="customerMobileNumber" placeholder = "Enter Mobile Number">
+         </div>
+
+         <div class = "form-group col-md-6">
+            <label for = "customerTotalLoanRequired"></label>
+            <input type = "text" class =" form-control"
+               id = "customerTotalLoanRequired" formControlName="customerTotalLoanRequired" placeholder = "Required Loan Amount">
+         </div>
+      </div>
+
+      <button type = "submit" class = "btn btn-primary">Add User</button>
+   </form>
+</div>

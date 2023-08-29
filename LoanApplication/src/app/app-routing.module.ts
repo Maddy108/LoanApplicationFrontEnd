@@ -6,6 +6,7 @@ import { ContactUsComponent } from './template/contact-us/contact-us.component';
 import { LoginComponent } from './entry/login/login.component';
 import { AppDashBoardComponent } from './entry/app-dash-board/app-dash-board.component';
 import { EnquiryComponent } from './template/enquiry/enquiry.component';
+import { AddCustomerComponent } from './modules/customer/add-customer/add-customer.component';
 
 const routes: Routes = [
 {
@@ -31,27 +32,14 @@ const routes: Routes = [
     },
     {
       path:'cm' , loadChildren:()=>import('src/app/modules/cm/cm.module').then(e=>e.CmModule)
+    },
+    {
+      path:'customer' , loadChildren:()=>import('src/app/modules/customer/customer.module').then(e=>e.CustomerModule)
     }
     
     
-  // ]
-// },
-// {
-//   path:'dash' , component:AppDashBoardComponent ,children:[
- 
-//     {
-//       path:'re' , loadChildren:()=>import('src/app/modules/re/re.module').then(e=>e.ReModule)
-//     }
-//   ]
-// },
-// {
-//   path:'dash' , component:AppDashBoardComponent ,children:[
- 
-//     {
-//       path:'admin' , loadChildren:()=>import('src/app/modules/admin/admin.module').then(e=>e.AdminModule)
-//     }
   ]
-}
+},
 
 ];
 

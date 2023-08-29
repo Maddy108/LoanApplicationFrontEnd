@@ -57,4 +57,8 @@ export class LoanService {
     e.cibil={};
     return this.http.put("http://localhost:8080/loanapp/getcibil",e);
   }
+  addCustomerForm(c:FormData)
+  {
+    return this.http.post("http://localhost:8080/customer/addCustomer",c);
+  }
 }

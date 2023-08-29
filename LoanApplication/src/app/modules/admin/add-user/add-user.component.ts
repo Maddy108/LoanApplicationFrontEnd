@@ -31,14 +31,7 @@ export class AddUserComponent implements OnInit {
       this.resetf();
     })
   }
-//   onSelectProfilePhoto(event)
-// {
-//   this.profileImg=event.target.files[0];
-// }
-//   resetf(){
-//     this.addUserForm.reset();
-//     this.profileImg=null;
-//   }
+
 imageSrc: any;
 onSelectProfilePhoto(event)
 {
