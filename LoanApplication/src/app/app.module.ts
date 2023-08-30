@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './entry/home/home.component';
@@ -13,10 +12,9 @@ import { AppDashBoardComponent } from './entry/app-dash-board/app-dash-board.com
 import { AppHeaderComponent } from './template/app-header/app-header.component';
 import { AppSideMenuComponent } from './template/app-side-menu/app-side-menu.component';
 import { EnquiryComponent } from './template/enquiry/enquiry.component';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppFooterComponent } from './template/app-footer/app-footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -38,7 +36,8 @@ import { AppFooterComponent } from './template/app-footer/app-footer.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
