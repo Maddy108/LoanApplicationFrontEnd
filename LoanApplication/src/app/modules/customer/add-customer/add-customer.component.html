@@ -49,257 +49,271 @@
    </form>
 </div> -->
 <div style="background-color: gray;">
-  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
-  <mat-stepper [linear]="isLinear" #stepper style="height: 590px;">
-    <!-- Customer Details -->
-    <mat-step [stepControl]="firstFormGroup">
-      <h3 style="color: white;">Enter Customer Details</h3>
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Customer Details</ng-template>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Enter Name" formControlName="customerName" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="customerDateOfBirth" required>
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Age</mat-label>
-            <input matInput placeholder="Enter Age" formControlName="customerAge" required>
-          </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Select Gender</mat-label>
-            <mat-select [(value)]="selected" formControlName="customerGender" required>
-              <mat-option>None</mat-option>
-              <mat-option value="Male">Male</mat-option>
-              <mat-option value="Female">Female</mat-option>
-              <mat-option value="Other">Other</mat-option>
+   <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+   </button>
+   <mat-stepper [linear]="isLinear" #stepper style="height: 590px;">
+      <!-- Customer Details -->
+      <form [formGroup]="addCustomerForm">
+         <mat-step [stepControl]="addCustomerForm">
+            <h3 style="color: white;">Enter Customer Details</h3>
+            <ng-template matStepLabel>Customer Details</ng-template>
+            <div style="display: flex; justify-content: space-evenly;">
+               <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter Name" formControlName="customerName">
+               </mat-form-field>
+               <mat-form-field>
+                  <mat-label>Customer Date Of Birth</mat-label>
+                  <input matInput placeholder="Enter Date Of Birth" formControlName="customerDateOfBirth">
+               </mat-form-field>
+               <mat-form-field>
+                  <mat-label>Age</mat-label>
+                  <input matInput placeholder="Enter Age" formControlName="customerAge">
+               </mat-form-field>
+            </div>
+            <div style="display: flex; justify-content: space-evenly;">
+               <mat-form-field>
+                  <mat-label>Select Gender</mat-label>
+                  <mat-select [(value)]="selected" formControlName="customerGender">
+                     <mat-option>None</mat-option>
+                     <mat-option value="Male">Male</mat-option>
+                     <mat-option value="Female">Female</mat-option>
+                     <mat-option value="Other">Other</mat-option>
+                  </mat-select>
+               </mat-form-field>
+               <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Enter Email" formControlName="customerEmail">
+               </mat-form-field>
+               <mat-form-field>
+                  <mat-label>Mobile Number</mat-label>
+                  <input matInput placeholder="Enter Mobile Number" formControlName="customerMobileNumber">
+               </mat-form-field>
+            </div>
+            <div style="display: flex; justify-content: space-evenly;">
+               <mat-form-field>
+                  <mat-label>Required Loan Amount</mat-label>
+                  <input matInput placeholder="Enter Required loan Amount" formControlName="customerTotalLoanRequired">
+               </mat-form-field>
+            </div>
+            <div>
+               <button mat-button matStepperNext>Next</button>
+            </div>
+         </mat-step>
+
+         <!-- All Personal Documents -->
+         <mat-step [stepControl]="addCustomerForm.controls['allPersonalDoc']"  label="Customer Documents">
+            <h3 style="color: white;">Upload All Personal Documents</h3>
+            <div formGroupName="allPersonalDoc">
+            
+               <mat-label>Address Proof</mat-label>
+               <input type="file" class="form-control"  (change)="onSelectAddressProof($event)">
+            
+               <mat-label>Pan Card</mat-label>
+               <input type="file" class="form-control" (change)="onSelectPanCard($event)">
+            
+               <mat-label>Addhar card</mat-label>
+               <input type="file" class="form-control" (change)="onSelectAddharCard($event)">
+            
+               <mat-label>Photo</mat-label>
+               <input type="file" class="form-control" (change)="onSelectPhoto($event)">
+            
+               <mat-label>signature</mat-label>
+               <input type="file" class="form-control" (change)="onSelectSignature($event)">
+            
+               <mat-label>salarySlips</mat-label>
+               <input type="file" class="form-control" (change)="onSelectSalarySlips($event)">
+            
+            <div>
+               <button mat-button matStepperPrevious>Back</button>
+               <button mat-button matStepperNext>Next</button>
+            </div>
+         </div>
+      </mat-step>
+
+      <!-- Customer Address Details -->
+      <mat-step [stepControl]="addCustomerForm.controls['customerAddress']" label="Address Details">
+         <h3 style="color: white;">Enter Customer Address Details</h3>
+         <div formGroupName="customerAddress">
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>City Name</mat-label>
+               <input matInput formControlName="customerCityname" placeholder="Enter City Name">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>District</mat-label>
+               <input matInput formControlName="customerDistrict" placeholder="Enter District Name">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>State</mat-label>
+               <input matInput formControlName="customerState" placeholder="Enter State Name">
+            </mat-form-field>
+         </div>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+         </div>
+      </mat-step>
+
+      <!-- Customer Profession Details -->
+      <mat-step [stepControl]="addCustomerForm.controls['profession']" label="Profession Details">
+         <h3 style="color: white;">Enter Customer Profession Details</h3>
+         <div formGroupName="profession">
+         <mat-form-field>
+            <mat-label>Select Profession Type</mat-label>
+            <mat-select [(value)]="selected" formControlName="professionType">
+               <mat-option>None</mat-option>
+               <mat-option value="Male">Student</mat-option>
+               <mat-option value="Female">Self Employyed</mat-option>
+               <mat-option value="Other">Employyed</mat-option>
             </mat-select>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Enter Email" formControlName="customerEmail" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Mobile Number</mat-label>
-            <input matInput placeholder="Enter Mobile Number" formControlName="customerMobileNumber" required>
-          </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Required Loan Amount</mat-label>
-            <input matInput placeholder="Enter Required loan Amount" formControlName="customerTotalLoanRequired"
-              required>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+         </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+         </div>
 
-    <!-- All Personal Documents -->
-    <mat-step [stepControl]="secondFormGroup" label="Customer Documents">
-      <h3 style="color: white;">Upload All Personal Documents</h3>
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+      </mat-step>
 
-    <!-- Customer Address Details -->
-    <mat-step [stepControl]="thirdFormGroup" label="Address Details">
-      <h3 style="color: white;">Enter Customer Address Details</h3>
-      <form [formGroup]="thirdFormGroup">
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>City Name</mat-label>
-            <input matInput formControlName="customerCityname" placeholder="Enter City Name" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>District</mat-label>
-            <input matInput formControlName="customerDistrict" placeholder="Enter District Name" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>State</mat-label>
-            <input matInput formControlName="customerState" placeholder="Enter State Name" required>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+      <!-- Current Loan Details -->
+      <mat-step [stepControl]="addCustomerForm.controls['currentLoanDetails']" label="Current Loan Details">
+         <h3 style="color: white;">Enter Customer Current Loan Details</h3>
+         <div formGroupName="currentLoanDetails">
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Current Loan Number</mat-label>
+               <input matInput formControlName="currentLoanNumber" placeholder="Enter Current LoanNumber">
+            </mat-form-field>
+            <!-- <mat-form-field>
+               <mat-label>Monthly EMI Amount</mat-label>
+               <input matInput formControlName="emiAmountMonthlyl" placeholder="Enter Monthly EMI Amount">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Next Emi Due Date</mat-label>
+               <input matInput formControlName="nextEmiDueDate" placeholder="Enter Next EMI Date">
+            </mat-form-field>
+         </div>
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Previous EMI Status</mat-label>
+               <input matInput formControlName="previousEmiStatus" placeholder="Previous EMI Status">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Previous Loan Amount</mat-label>
+               <input matInput formControlName="loanAmount" placeholder="Enter Previous Loan Amount">
+            </mat-form-field> -->
+            <mat-form-field>
+               <mat-label>Rate of Interest</mat-label>
+               <input matInput formControlName="rateOfInterest" placeholder="Rate of Interest">
+            </mat-form-field>
+         </div>
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Total Amount To Be Paid In Double</mat-label>
+               <input matInput formControlName="totalAmountToBePaidDouble"
+                  placeholder="Enter Total Amount To Be Paid In Double">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Processing Fees</mat-label>
+               <input matInput formControlName="processingFees" placeholder="Processing Fees">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Total Interest</mat-label>
+               <input matInput formControlName="totalInterest" placeholder="Total Interest">
+            </mat-form-field>
+         </div>
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Previous Loan Sanction Date</mat-label>
+               <input matInput formControlName="sanctionDate" placeholder="Previous Loan Sanction Date">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Previous Loan Remark</mat-label>
+               <input matInput formControlName="remark" placeholder="Enter Previous Loan Remark">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Previous Loan Status</mat-label>
+               <input matInput formControlName="status" placeholder="Enter Previous Loan Status">
+            </mat-form-field>
+         </div>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+         </div>
 
-    <!-- Customer Profession Details -->
-    <mat-step [stepControl]="fourthFormGroup" label="Profession Details">
-      <h3 style="color: white;">Enter Customer Profession Details</h3>
-      <form [formGroup]="fourthFormGroup">
-        <mat-form-field>
-          <mat-label>Select Profession Type</mat-label>
-          <mat-select [(value)]="selected" formControlName="professionType" required>
-            <mat-option>None</mat-option>
-            <mat-option value="Male">Student</mat-option>
-            <mat-option value="Female">Self Employyed</mat-option>
-            <mat-option value="Other">Employyed</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+      </mat-step>
 
-    <!-- Current Loan Details -->
-    <mat-step [stepControl]="fifthFormGroup" label="Current Loan Details">
-      <h3 style="color: white;">Enter Customer Current Loan Details</h3>
-      <form [formGroup]="fifthFormGroup">
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Current Loan Number</mat-label>
-            <input matInput formControlName="currentLoanNumber" placeholder="Enter Current LoanNumber" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Monthly EMI Amount</mat-label>
-            <input matInput formControlName="emiAmountMonthlyl" placeholder="Enter Monthly EMI Amount" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Next EMI Due Date</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="nextEmiDueDate" required>
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Previous EMI Status</mat-label>
-            <input matInput formControlName="previousEmiStatus" placeholder="Previous EMI Status" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Previous Loan Amount</mat-label>
-            <input matInput formControlName="loanAmount" placeholder="Enter Previous Loan Amount" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Rate of Interest</mat-label>
-            <input matInput formControlName="rateOfInterest" placeholder="Rate of Interest" required>
-          </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Total Amount To Be Paid In Double</mat-label>
-            <input matInput formControlName="totalAmountToBePaidDouble"
-              placeholder="Enter Total Amount To Be Paid In Double" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Processing Fees</mat-label>
-            <input matInput formControlName="processingFees" placeholder="Processing Fees" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Total Interest</mat-label>
-            <input matInput formControlName="totalInterest" placeholder="Total Interest" required>
-          </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Previous Loan Sanction Date</mat-label>
-            <input matInput formControlName="sanctionDate" placeholder="Previous Loan Sanction Date" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Previous Loan Remark</mat-label>
-            <input matInput formControlName="remark" placeholder="Enter Previous Loan Remark" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Previous Loan Status</mat-label>
-            <input matInput formControlName="status" placeholder="Enter Previous Loan Status" required>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+      <!-- Account Details -->
+      <mat-step [stepControl]="addCustomerForm.controls['accountDetails']" label="Account Details">
+         <h3 style="color: white;">Enter Customer Account Details</h3>
+         <div formGroupName="accountDetails">
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Select Account Type</mat-label>
+               <mat-select [(value)]="selected" formControlName="accounType">
+                  <mat-option>None</mat-option>
+                  <mat-option value="Male">Saving</mat-option>
+                  <mat-option value="Female">Current</mat-option>
+               </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Account Holder Name</mat-label>
+               <input matInput formControlName="accountHolderName" placeholder="Enter Account Holder Name">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Account Number</mat-label>
+               <input matInput formControlName="accountNumber" placeholder="Enter Account Number">
+            </mat-form-field>
+         </div>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+         </div>
 
-    <!-- Account Details -->
-    <mat-step [stepControl]="sixthFormGroup" label="Account Details">
-      <h3 style="color: white;">Enter Customer Account Details</h3>
-      <form [formGroup]="sixthFormGroup">
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Select Account Type</mat-label>
-            <mat-select [(value)]="selected" formControlName="accounType" required>
-              <mat-option>None</mat-option>
-              <mat-option value="Male">Saving</mat-option>
-              <mat-option value="Female">Current</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Account Holder Name</mat-label>
-            <input matInput formControlName="accountHolderName" placeholder="Enter Account Holder Name" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Account Number</mat-label>
-            <input matInput formControlName="accountNumber" placeholder="Enter Account Number" required>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+      </mat-step>
 
-    <!-- Guarantor Details -->
-    <mat-step [stepControl]="seventhFormGroup" label="Guarantor Details">
-      <h3 style="color: white;">Enter Guarantor Details</h3>
-      <form [formGroup]="seventhFormGroup">
-        <div style="display: flex; justify-content: space-evenly;">
-          <mat-form-field>
-            <mat-label>Guarantor Name</mat-label>
-            <input matInput formControlName="guarantorName" placeholder="Enter Guarantor Name" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Guarantor Relationship With Customer</mat-label>
-            <input matInput formControlName="guarantorRelationshipWithCustomer" placeholder="Guarantor Relationship With Customer" required>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Guarantor Aadhar Card Number</mat-label>
-            <input matInput formControlName="guarantorAadharCardNumber" placeholder="Enter Guarantor Aadhar Card Number" required>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <mat-step>
-      <ng-template matStepLabel>Submit Application</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.submit()">Submit</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+      <!-- Guarantor Details -->
+      <mat-step [stepControl]="addCustomerForm.controls['gurantorDetails']" label="Guarantor Details">
+         <h3 style="color: white;">Enter Guarantor Details</h3>
+         <div formGroupName="gurantorDetails">
+         <div style="display: flex; justify-content: space-evenly;">
+            <mat-form-field>
+               <mat-label>Guarantor Name</mat-label>
+               <input matInput formControlName="guarantorName" placeholder="Enter Guarantor Name">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Guarantor Relationship With Customer</mat-label>
+               <input matInput formControlName="guarantorRelationshipWithCustomer"
+                  placeholder="Guarantor Relationship With Customer">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-label>Guarantor Aadhar Card Number</mat-label>
+               <input matInput formControlName="guarantorAadharCardNumber"
+                  placeholder="Enter Guarantor Aadhar Card Number">
+            </mat-form-field>
+         </div>
       </div>
-    </mat-step>
-  </mat-stepper>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+         </div>
+
+      </mat-step>
+
+      <mat-step>
+         <ng-template matStepLabel>Submit Application</ng-template>
+         <p>You are now done.</p>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="addCustomerFormMethod()">Submit</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+         </div>
+      </mat-step>
+      </form>
+   </mat-stepper>
 </div>
